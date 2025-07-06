@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: theme('colors.brand.background');
+  color: white;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Dosis', sans-serif;
+}
+
+@layer components {
+  .cinema-card {
+    @apply bg-gradient-to-br from-brand-surface-2 to-brand-surface-1 border border-white/10 backdrop-blur-sm;
+  }
+  
+  .cinema-button {
+    @apply bg-gradient-to-r from-brand-primary to-brand-primary-dark hover:from-brand-primary-dark hover:to-brand-primary text-brand-background font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  .cinema-button-secondary {
+    @apply bg-gradient-to-r from-brand-secondary to-[#c70039] hover:from-[#c70039] hover:to-brand-secondary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  .hero-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(243, 183, 27, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(221, 0, 63, 0.08) 0%, transparent 50%);
+  }
+  
+  .movie-card {
+    @apply bg-gradient-to-br from-brand-surface-2 to-brand-surface-1 border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-brand-primary/50;
+  }
+  
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
