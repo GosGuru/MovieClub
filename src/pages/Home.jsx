@@ -15,7 +15,7 @@ const Home = ({ showToast }) => {
       duration: 'TBA',
       rating: 'TBA',
       showtimes: ['14:00'],
-      image: '/assets/Elio.jpeg'
+      image: '/assets/elio.jpeg'
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const Home = ({ showToast }) => {
       duration: 'TBA',
       rating: 'TBA',
       showtimes: ['16:00'],
-      image: '/assets/Lilo&Stitch.jpeg'
+      image: '/assets/lilo-stitch.jpeg'
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const Home = ({ showToast }) => {
       duration: 'TBA',
       rating: 'TBA',
       showtimes: ['18:00'],
-      image: '/assets/Cómoentrenaratu dragón.png'
+      image: '/assets/como-entrenar-a-tu-dragon.png'
     },
     {
       id: 4,
@@ -42,7 +42,7 @@ const Home = ({ showToast }) => {
       duration: 'TBA',
       rating: 'TBA',
       showtimes: ['20:00', '22:30'],
-      image: '/assets/Jurassic World.webp'
+      image: '/assets/jurassic-world.webp'
     },
     {
       id: 5,
@@ -51,7 +51,7 @@ const Home = ({ showToast }) => {
       duration: 'TBA',
       rating: 'TBA',
       showtimes: ['22:30'],
-      image: '/assets/M3GAN 2.0.jpg'
+      image: '/assets/m3gan-2.jpg'
     }
   ];
 
@@ -99,7 +99,7 @@ const Home = ({ showToast }) => {
 
       <div className="min-h-screen bg-brand-background">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-2 sm:px-0 py-8">
           {/* Imagen de fondo hero */}
           <img 
             src="/assets/hero.jpg" 
@@ -107,34 +107,33 @@ const Home = ({ showToast }) => {
             className="absolute inset-0 w-full h-full object-cover object-center opacity-60" 
             style={{zIndex: 0}} 
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-background/80 via-brand-background/60 to-brand-background/80"></div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Gradiente más oscuro en mobile para mejor contraste */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-brand-background/90 sm:from-brand-background/80 sm:via-brand-background/60 sm:to-brand-background/80"></div>
+          <div className="relative z-10 max-w-2xl sm:max-w-7xl mx-auto px-2 sm:px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8"
             >
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-  ¡Bienvenido a{' '} <br />
-  <span className="relative inline-block">
-    <span className="font-['Bebas Neue'] uppercase  tracking-wider text-[#F5B021]">
-      Movie club&nbsp;Durazno
-    </span>
-    <span className="absolute left-0 right-0 -bottom-1 h-[3px] uppercase tracking-[10px] text-[35px]" >Cines</span>
-  </span>
-  
-</h1> <br />
-
-              <p className="text-2xl text-white/90 max-w-2xl mx-auto mb-8">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight sm:leading-tight">
+                ¡Bienvenido a{' '} <br />
+                <span className="relative inline-block">
+                  <span className="font-['Bebas Neue'] uppercase tracking-wider text-[#F5B021] text-2xl sm:text-5xl">
+                    Movie club&nbsp;Durazno
+                  </span>
+                  <span className="absolute left-0 right-0 -bottom-1 h-[3px] uppercase tracking-[6px] sm:tracking-[10px] text-[20px] sm:text-[35px]">Cines</span>
+                </span>
+              </h1>
+              <p className="text-lg sm:text-2xl text-white/90 max-w-xl mx-auto mb-6 sm:mb-8">
                 Descubre la mejor experiencia de cine en Durazno. Consulta la cartelera y compra tus entradas fácilmente.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/cartelera" className="cinema-button text-lg px-8 py-4 font-semibold rounded-xl inline-flex items-center space-x-2">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Link to="/cartelera" className="cinema-button w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl inline-flex items-center space-x-2">
                   <Calendar className="h-5 w-5 text-black/70" />
                   <span>Ver Cartelera</span>
                 </Link>
-                <Link to="/compra-entradas" className="cinema-button-secondary text-lg px-8 py-4 font-semibold rounded-xl inline-flex items-center space-x-2">
+                <Link to="/compra-entradas" className="cinema-button-secondary w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl inline-flex items-center space-x-2">
                   <Ticket className="h-5 w-5 text-white/90" />
                   <span>Comprar Entradas</span>
                 </Link>
@@ -167,12 +166,12 @@ const Home = ({ showToast }) => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="movie-card group cursor-pointer"
+                  className="movie-card group cursor-pointer bg-[#18181b] rounded-2xl shadow-md border border-gray-700 p-2 flex flex-col"
                   onClick={() => handleFeatureClick('movie details')}
                 >
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden rounded-xl">
                     <img  
-                      className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500 border border-white/10"
                       alt={movie.title}
                       src={movie.image} />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -180,8 +179,8 @@ const Home = ({ showToast }) => {
                       <Star className="h-4 w-4 mr-1"/> {movie.rating}
                     </div>
                     <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-xl font-bold text-white mb-2 font-['Dosis']">{movie.title}</h3>
-                      <div className="flex items-center justify-between text-sm text-gray-300">
+                      <h3 className="text-lg font-bold text-white mb-1 font-['Dosis']">{movie.title}</h3>
+                      <div className="flex items-center justify-between text-xs text-gray-300">
                         <span>{movie.genre}</span>
                         <span className="flex items-center">
                           <Clock className="h-4 w-4 mr-1" />
@@ -190,17 +189,16 @@ const Home = ({ showToast }) => {
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="p-6">
-                    <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-col gap-3 p-4 flex-1 justify-end">
+                    <div className="flex flex-wrap gap-2 mb-2">
                       {movie.showtimes.map((time) => (
-                        <span key={time} className="bg-brand-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+                        <span key={time} className="bg-white/90 text-black px-3 py-1 rounded-full text-xs font-semibold shadow-sm border border-gray-200">
                           {time}
                         </span>
                       ))}
                     </div>
                     <button 
-                      className="w-full cinema-button flex items-center justify-center space-x-2"
+                      className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold py-3 rounded-full shadow-md hover:scale-105 transition-transform duration-200 text-base"
                       onClick={(e) => {
                         e.stopPropagation();
                         navigate('/compra-entradas', {
@@ -208,8 +206,8 @@ const Home = ({ showToast }) => {
                         });
                       }}
                     >
-                      <Ticket className="h-4 w-4" />
-                      <span>Comprar Entradas</span>
+                      <Ticket className="h-5 w-5" />
+                      Comprar Entradas
                     </button>
                   </div>
                 </motion.div>

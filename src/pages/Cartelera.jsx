@@ -27,7 +27,7 @@ const Cartelera = ({ showToast }) => {
           { time: '14:00', date: '2025-07-08', available: true }
         ]
       },
-      image: '/assets/Elio.jpeg'
+      image: '/assets/elio.jpeg'
     },
     {
       id: 2,
@@ -47,7 +47,7 @@ const Cartelera = ({ showToast }) => {
           { time: '16:00', date: '2025-07-08', available: true }
         ]
       },
-      image: '/assets/Lilo&Stitch.jpeg'
+      image: '/assets/lilo-stitch.jpeg'
     },
     {
       id: 3,
@@ -67,7 +67,7 @@ const Cartelera = ({ showToast }) => {
           { time: '18:00', date: '2025-07-08', available: true }
         ]
       },
-      image: '/assets/Cómoentrenaratu dragón.png'
+      image: '/assets/como-entrenar-a-tu-dragon.png'
     },
     {
       id: 4,
@@ -90,7 +90,7 @@ const Cartelera = ({ showToast }) => {
           { time: '22:30', date: '2025-07-08', available: true }
         ]
       },
-      image: '/assets/Jurassic World.webp'
+      image: '/assets/jurassic-world.webp'
     },
     {
       id: 5,
@@ -106,7 +106,7 @@ const Cartelera = ({ showToast }) => {
           { time: '22:30', date: '2025-07-06', available: true }
         ]
       },
-      image: '/assets/M3GAN 2.0.jpg'
+      image: '/assets/m3gan-2.jpg'
     }
   ];
 
@@ -168,17 +168,17 @@ const Cartelera = ({ showToast }) => {
           </div>
         </section>
 
-        {/* Filters */}
-        <section className="py-8 bg-[#1a1d20] sticky top-16 z-40 border-b border-gray-700/50">
+        {/* Filtros */}
+        <section className="py-6 bg-[#1a1d20]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-8 w-full">
               {/* Date Selector */}
-              <div className="flex items-center space-x-2">
-                <Calendar className="h-5 w-5 text-[#DD003F]" />
+              <div className="flex items-center space-x-2 flex-1">
+                <Calendar className="h-5 w-5 text-[#DD003F] flex-shrink-0" />
                 <select
                   value={selectedDate}
                   onChange={(e) => setSelectedDate(e.target.value)}
-                  className="bg-[#2a2f35] text-white border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-[#DD003F] transition-colors duration-300"
+                  className="bg-[#2a2f35] text-white border border-gray-600 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-[#DD003F] transition-colors duration-300"
                 >
                   {dates.map((date) => (
                     <option key={date.value} value={date.value}>
@@ -187,14 +187,13 @@ const Cartelera = ({ showToast }) => {
                   ))}
                 </select>
               </div>
-
               {/* Genre Filter */}
-              <div className="flex items-center space-x-2">
-                <Filter className="h-5 w-5 text-[#DD003F]" />
+              <div className="flex items-center space-x-2 flex-1">
+                <Filter className="h-5 w-5 text-[#DD003F] flex-shrink-0" />
                 <select
                   value={selectedGenre}
                   onChange={(e) => setSelectedGenre(e.target.value)}
-                  className="bg-[#2a2f35] text-white border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-[#DD003F] transition-colors duration-300"
+                  className="bg-[#2a2f35] text-white border border-gray-600 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-[#DD003F] transition-colors duration-300"
                 >
                   {genres.map((genre) => (
                     <option key={genre} value={genre}>
@@ -203,16 +202,15 @@ const Cartelera = ({ showToast }) => {
                   ))}
                 </select>
               </div>
-
               {/* Search */}
-              <div className="flex items-center space-x-2 flex-1 max-w-md">
-                <Search className="h-5 w-5 text-[#DD003F]" />
+              <div className="flex items-center space-x-2 flex-1">
+                <Search className="h-5 w-5 text-[#DD003F] flex-shrink-0" />
                 <input
                   type="text"
                   placeholder="Buscar película o director..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="flex-1 bg-[#2a2f35] text-white border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-[#DD003F] transition-colors duration-300"
+                  className="bg-[#2a2f35] text-white border border-gray-600 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-[#DD003F] transition-colors duration-300"
                 />
               </div>
             </div>
@@ -304,19 +302,19 @@ const Cartelera = ({ showToast }) => {
                         </div>
 
                         {/* Actions */}
-                        <div className="flex flex-col sm:flex-row gap-3">
+                        <div className="flex flex-col md:flex-row gap-3 md:gap-6 mt-4">
                           <button
                             onClick={() => handleWatchTrailer(movie.title)}
-                            className="flex-1 bg-[#2a2f35] hover:bg-[#343a40] text-white py-2 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2"
+                            className="flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold transition-colors duration-300 bg-[#23272b] text-white hover:bg-[#343a40] md:min-w-[180px] md:text-lg"
                           >
-                            <Play className="h-4 w-4" />
+                            <Play className="h-5 w-5 md:mr-2" />
                             <span>Ver Tráiler</span>
                           </button>
                           <button
                             onClick={() => handleBuyTickets(movie.title, 'general')}
-                            className="flex-1 cinema-button flex items-center justify-center space-x-2"
+                            className="flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold transition-colors duration-300 bg-[#F5B021] text-[#23272b] hover:bg-yellow-400 md:min-w-[180px] md:text-lg shadow-md"
                           >
-                            <Ticket className="h-4 w-4" />
+                            <Ticket className="h-5 w-5 md:mr-2" />
                             <span>Comprar Entradas</span>
                           </button>
                         </div>

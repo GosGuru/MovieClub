@@ -24,7 +24,7 @@ const CompraEntradas = ({ showToast }) => {
         { time: '14:00', date: '2025-07-07', available: true },
         { time: '14:00', date: '2025-07-08', available: true }
       ],
-      image: '/assets/Elio.jpeg'
+      image: '/assets/elio.jpeg'
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ const CompraEntradas = ({ showToast }) => {
         { time: '16:00', date: '2025-07-07', available: true },
         { time: '16:00', date: '2025-07-08', available: true }
       ],
-      image: '/assets/Lilo&Stitch.jpeg'
+      image: '/assets/lilo-stitch.jpeg'
     },
     {
       id: 3,
@@ -50,7 +50,7 @@ const CompraEntradas = ({ showToast }) => {
         { time: '18:00', date: '2025-07-07', available: true },
         { time: '18:00', date: '2025-07-08', available: true }
       ],
-      image: '/assets/Cómoentrenaratu dragón.png'
+      image: '/assets/como-entrenar-a-tu-dragon.png'
     },
     {
       id: 4,
@@ -65,7 +65,7 @@ const CompraEntradas = ({ showToast }) => {
         { time: '22:30', date: '2025-07-07', available: true },
         { time: '22:30', date: '2025-07-08', available: true }
       ],
-      image: '/assets/Jurassic World.webp'
+      image: '/assets/jurassic-world.webp'
     },
     {
       id: 5,
@@ -76,7 +76,7 @@ const CompraEntradas = ({ showToast }) => {
       showtimes: [
         { time: '22:30', date: '2025-07-06', available: true }
       ],
-      image: '/assets/M3GAN 2.0.jpg'
+      image: '/assets/m3gan-2.jpg'
     }
   ];
 
@@ -204,10 +204,10 @@ const CompraEntradas = ({ showToast }) => {
 
             {/* Progress Steps */}
             <div className="flex justify-center">
-              <div className="flex items-center space-x-4">
+              <div className="flex flex-col md:flex-row items-center gap-4 md:gap-0 md:space-x-4 w-full max-w-2xl">
                 {steps.map((step, index) => (
-                  <div key={step.number} className="flex items-center">
-                    <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all duration-300 ${
+                  <div key={step.number} className="flex flex-col md:flex-row items-center w-full md:w-auto">
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all duration-300 mx-auto md:mx-0 ${
                       currentStep === step.number
                         ? 'bg-[#DD003F] border-[#DD003F] text-white'
                         : step.completed
@@ -216,13 +216,13 @@ const CompraEntradas = ({ showToast }) => {
                     }`}>
                       {step.completed ? <Check className="h-5 w-5" /> : step.number}
                     </div>
-                    <span className={`ml-2 text-sm font-medium ${
+                    <span className={`mt-2 md:mt-0 md:ml-2 text-sm font-medium text-center md:text-left ${
                       currentStep === step.number ? 'text-white' : 'text-gray-400'
                     }`}>
                       {step.title}
                     </span>
                     {index < steps.length - 1 && (
-                      <div className={`w-8 h-0.5 mx-4 ${
+                      <div className={`md:w-8 md:h-0.5 md:mx-4 w-0.5 h-8 my-2 md:my-0 md:w-8 md:h-0.5 ${
                         step.completed ? 'bg-[#DCF836]' : 'bg-gray-600'
                       }`} />
                     )}
