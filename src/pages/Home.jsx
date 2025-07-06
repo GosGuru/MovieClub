@@ -24,7 +24,7 @@ const Home = ({ showToast }) => {
       duration: 'TBA',
       rating: 'TBA',
       showtimes: ['16:00'],
-      image: '/assets/lilo-stitch.jpeg'
+      image: '/assets/lilo&stitch.jpeg'
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const Home = ({ showToast }) => {
       duration: 'TBA',
       rating: 'TBA',
       showtimes: ['18:00'],
-      image: '/assets/como-entrenar-a-tu-dragon.png'
+      image: '/assets/comoentrenar.png'
     },
     {
       id: 4,
@@ -42,7 +42,7 @@ const Home = ({ showToast }) => {
       duration: 'TBA',
       rating: 'TBA',
       showtimes: ['20:00', '22:30'],
-      image: '/assets/jurassic-world.webp'
+      image: '/assets/jurassicworld.webp'
     },
     {
       id: 5,
@@ -51,7 +51,7 @@ const Home = ({ showToast }) => {
       duration: 'TBA',
       rating: 'TBA',
       showtimes: ['22:30'],
-      image: '/assets/m3gan-2.jpg'
+      image: '/assets/m3gan2.0.jpg'
     }
   ];
 

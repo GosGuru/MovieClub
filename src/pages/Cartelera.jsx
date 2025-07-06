@@ -47,7 +47,7 @@ const Cartelera = ({ showToast }) => {
           { time: '16:00', date: '2025-07-08', available: true }
         ]
       },
-      image: '/assets/lilo-stitch.jpeg'
+      image: '/assets/lilo&stitch.jpeg'
     },
     {
       id: 3,
@@ -67,7 +67,7 @@ const Cartelera = ({ showToast }) => {
           { time: '18:00', date: '2025-07-08', available: true }
         ]
       },
-      image: '/assets/como-entrenar-a-tu-dragon.png'
+      image: '/assets/comoentrenar.png'
     },
     {
       id: 4,
@@ -90,7 +90,7 @@ const Cartelera = ({ showToast }) => {
           { time: '22:30', date: '2025-07-08', available: true }
         ]
       },
-      image: '/assets/jurassic-world.webp'
+      image: '/assets/jurassicworld.webp'
     },
     {
       id: 5,
@@ -106,7 +106,7 @@ const Cartelera = ({ showToast }) => {
           { time: '22:30', date: '2025-07-06', available: true }
         ]
       },
-      image: '/assets/m3gan-2.jpg'
+      image: '/assets/m3gan2.0.jpg'
     }
   ];
 
